@@ -65,8 +65,8 @@ public extension Date {
             return self.toString(dateStyle: .full, timeStyle: .full, isRelative: false)
         case .ordinalDay:
             let formatter = Date.cachedOrdinalNumberFormatter
-            if #available(iOSApplicationExtension 9.0, *) {
-                formatter.numberStyle = .ordinal
+            if #available(iOS 9.0, *) {
+              formatter.numberStyle = .ordinal
             }
             return formatter.string(from: component(.day)! as NSNumber)!
         case .weekday:
